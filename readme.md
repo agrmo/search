@@ -1,0 +1,3 @@
+# search
+
+Various search algorithms.
