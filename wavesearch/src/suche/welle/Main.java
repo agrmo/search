@@ -1,13 +1,13 @@
-package suche.dijkstra;
+package suche.welle;
 
 import graph.gewicht.Gewichtgraph;
 import graph.gewicht.Doppelgewichtgraph;
-import java.util.Arrays;
 import druck.graph.gewicht.Gewichtgraphdrucker;
+import java.util.Arrays;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes suche.dijkstra.Main
+  && java -cp classes suche.welle.Main
 */
 
 public class Main {
@@ -41,19 +41,12 @@ public class Main {
 			  {6,9,3}};
 	
 	Gewichtgraph gg = new Gewichtgraph(n, kanten);
-	// System.out.println(Gewichtgraphdrucker.drucke(gg));
 	Doppelgewichtgraph dgg = new Doppelgewichtgraph(gg);
 	System.out.println(Gewichtgraphdrucker.drucke(dgg));
-	int[] wege = Dijkstra.dijkstra(dgg, 1);
+	int[] wege = Wellensuche.wellensuche(dgg, 1);
 	System.out.println(Arrays.toString(wege));
     }
 
-    static void beispielzwei() {
-    }
-
-    static void beispieldrei() {
-    }
-    
     public static void main(String[] args) {
 	beispieleins();
     }

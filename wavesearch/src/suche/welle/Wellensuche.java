@@ -1,4 +1,4 @@
-package suche.dijkstra;
+package suche.welle;
 
 import graph.gewicht.Gewichtgraph;
 import graph.gewicht.Doppelgewichtgraph;
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import welle.Welle;
 
-public class Dijkstra  {
+public class Wellensuche  {
 
     // Führe den Dijkstra-Algorithmus angefangt mit dem
     // Anfangsknoten. Die Durchführung dieses Algorithmus ist wie eine
@@ -17,7 +17,8 @@ public class Dijkstra  {
     // Problem: Der Graph muss nur einen Teil haben, weil der
     // Algorithmus beendet nur wenn die Welle so groß wie der Graph
     // ist.
-    static int[] dijkstra(Doppelgewichtgraph dgg, int anfangsknoten) {
+    static int[] wellensuche(Doppelgewichtgraph dgg,
+			     int anfangsknoten) {
 
 	// Die Antwort des Algorithmus: eine Liste von Wegen für jeden Knoten.
 	int[] wege = new int[dgg.nachbar.size()];
@@ -42,7 +43,7 @@ public class Dijkstra  {
 	    // Nehme die leichteste Kante, die einen schon getretenen
 	    // Knoten hat, und einen nicht getretenen Knoten hat.
 
-	    System.out.println("schritt");
+	    System.out.println("Schritt gesehen " + w.gesehen.toString());
 
 	    // Das ist sozusagen die Grenze der Welle.
 	    int[] kante = w.nehmeBilligsteKante();
