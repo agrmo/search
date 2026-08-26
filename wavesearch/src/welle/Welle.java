@@ -72,7 +72,34 @@ public class Welle {
     // Nehme die billigste Kante, die noch nicht gesehen ist, aber mit
     // einem gesehenen Knoten verbunden ist.
     //
-    // Einfach der einzige wichtige Schritt des Dijkstra-Algorithmus.
+    // Das hier ist nicht der Dijkstra-Algorithmus. Der Schritt im
+    // Dijkstra zählt auch den vorgegangenen Weg zum Knoten.
+    //
+    // d' = d + Gewicht der neuen Kante
+    //
+    // Aber die Funktion hier tut das nicht.
+    //
+    // Beispiel
+    //
+    //     10
+    // 0(3)---2 (?)
+    //   \    |
+    //    \   | 
+    //    9\  |5
+    //      \ |
+    //       \|
+    //        1(12)
+    //
+    // Es gibt 3 Knoten in dieser Schnittmenge.
+    // Der Knoten 0 hat den schon geschriebenen Weg 3.
+    // Der Knoten 1 hat den schon geschriebenen Weg 12.
+    //
+    // Diese Funktion nimmt die billigste Kante, [1,2], Gewicht 5.
+    //
+    // Aber der kleinste Weg zum Knoten 2 sollte [0,2] sein, sodaß
+    // das Gewicht 3+10=13 wird.
+    //
+    // Aber diese Funktion hat nimmt den Weg 12+5=17.
     //
     public int[] nehmeBilligsteKante() {
 
