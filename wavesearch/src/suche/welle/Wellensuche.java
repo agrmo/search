@@ -46,7 +46,7 @@ public class Wellensuche  {
 	    System.out.println("Schritt gesehen " + w.gesehen.toString());
 
 	    // Das ist sozusagen die Grenze der Welle.
-	    int[] kante = w.nehmeBilligsteKante();
+	    int[] kante = w.nehmeLeichtesteKante();
 
 	    System.out.println("billigste " + Arrays.toString(kante));
 

@@ -101,7 +101,7 @@ public class Welle {
     //
     // Aber diese Funktion hat nimmt den Weg 12+5=17.
     //
-    public int[] nehmeBilligsteKante() {
+    public int[] nehmeLeichtesteKante() {
 
 	// Nehme eine Liste der ausgehenden Kanten.
 	ArrayList<int[]> ak = this.ausgehendeKanten();
@@ -123,6 +123,47 @@ public class Welle {
 	    // ist, dann wechseln wir den Index.
 	    if (neu < kleinste) {
 		index = i;
+	    }
+	}
+
+	// Daraus nehmen wir nur die billigste Kante.
+	return ak.get(index);
+    }
+
+    // Dijkstra
+    public int[] nehmeKleinstenWeg(int[] wege) {
+	// Nehme eine Liste der ausgehenden Kanten.
+	ArrayList<int[]> ak = this.ausgehendeKanten();
+
+	System.out.println("Ausgehende Kanten " + Listedrucker.drucke(ak));
+
+	// Grundfall
+	// Nehmen wir an, daß es mindestens eine Kante in ak gibt.
+	int index = 0;
+	int kleinsterWeg = wege[ak.get(index)[0]]
+	    + this.graph.gewicht.get(ak.get(index)[0]).get(ak.get(index)[1]);
+
+	System.out.println("Grundfall index 0 Weg " + kleinsterWeg);
+	
+	// Für jede ausgehende Kante [x,y], x steht schon in der Welle
+	// und y steht knapp draußen. Berechne
+	//
+	// Weg[x] + Gewicht(y)
+	//
+	// Falls der Weg+Gewicht 
+	for (int i = 0; i < ak.size(); i++) {
+
+	    int neuerWeg = wege[ak.get(i)[0]]
+		+ this.graph.gewicht.get(ak.get(i)[0]).get(ak.get(i)[1]);
+
+	    // Falls der Weg zum neuen Knoten kleiner ist als der
+	    // vorherigen, nehme den neuen Weg un die neue Kante.
+	    if (neuerWeg < kleinsterWeg) {
+
+		System.out.println("Index " + i
+				   + " ist besser, Weg " + neuerWeg);
+		index = i;
+		kleinsterWeg = neuerWeg;
 	    }
 	}
 

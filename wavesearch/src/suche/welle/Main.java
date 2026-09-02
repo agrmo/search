@@ -6,8 +6,7 @@ import druck.graph.gewicht.Gewichtgraphdrucker;
 import java.util.Arrays;
 
 /*
-  javac -d classes $(find src -type f) \
-  && java -cp classes suche.welle.Main
+  java -cp classes suche.welle.Main
 */
 
 public class Main {
