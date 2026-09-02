@@ -5,6 +5,23 @@ import java.util.ArrayList;
 // Einfache Funktionen, um Listen zu drucken.
 public class Listedrucker {
 
+    public static String druckeliste(ArrayList<Integer> liste) {
+	StringBuilder sb = new StringBuilder();
+	sb.append("[");
+	
+	for (int i = 0; i < liste.size(); i++) {
+
+	    if (i != 0) {
+		sb.append(",");
+	    }
+
+	    sb.append(liste.get(i));
+	}
+
+	sb.append("]\n");
+
+	return sb.toString();
+    }
 
     public static String drucke(ArrayList<int[]> liste) {
 

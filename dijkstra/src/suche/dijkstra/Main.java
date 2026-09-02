@@ -6,8 +6,7 @@ import druck.graph.gewicht.Gewichtgraphdrucker;
 import java.util.Arrays;
 
 /*
-  javac -d classes $(find src -type f) \
-  && java -cp classes suche.dijkstra.Main
+  java -cp classes suche.dijkstra.Main
 */
 
 public class Main {
@@ -16,21 +15,21 @@ public class Main {
 	/*
 	  Darstellung:
 	  
-	    2   5      1
-	  1 - 7 - 3 ------4   
-	      \   |        \
-	      4\  |2        \3 
-	        \ | 1     3  \   3
-	         0-----8------2------5
-		  \   /        \
-		  9\ /1         \2
-		    10           \
-		                  6
-		                   \
-				    \3
-				     \
-				      9
-				      
+            2   5      1
+          1 - 7 - 3 ------4   
+              \   |        \
+              4\  |2        \3 
+                \ | 1     3  \   3
+                 0-----8------2------5
+                  \   /        \
+                  9\ /1         \2
+                    10           \
+                                  6
+                                   \
+                                    \3
+                                     \
+                                      9
+                                      
 	*/
 
 	int n = 11;
