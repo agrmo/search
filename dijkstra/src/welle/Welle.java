@@ -1,9 +1,9 @@
 package welle;
 
-import druck.liste.Listedrucker;
 import graph.gewicht.Doppelgewichtgraph;
-import java.util.ArrayList;
 import java.util.HashSet;
+import druck.liste.Listedrucker;
+import java.util.ArrayList;
 
 // Eine Welle ist eine Menge von Knoten eines Graphen, die in einer
 // unbestimmten Richtung ausgehen.

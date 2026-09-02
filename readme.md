@@ -18,7 +18,7 @@ Serial recursive depth first search on a binary tree. Will be useful for Priorit
        1   9   5   8
 ```
 
-Returns
+Searching for 8 returns
 
 ```
 [3, 2, 8]
@@ -34,7 +34,7 @@ Depth first search on an undirected graph.
 
 ## wavesearch
 
-A neutered version of Dijkstra which doesn't consider prior distances, but rather expands a wavefront of nodes by selecting the cheapest edge to an unseen node. This is one step before Dijkstra, where you add in the prior distances into the calculation for selecting the cheapest edge. This does not always give shortest distances, like Dijkstra, but it could have other interesting properties about it. I'll call it "wavesearch" or maybe "Dumbstra." This will be useful in constructing other "wave" algorithms. The idea is interesting because we can begin the wave at multiple disconnected points in a graph. The wave will still tell you which nodes are on its edge, and which are cheapest.
+A neutered version of Dijkstra which doesn't consider prior distances, but rather expands a wavefront of nodes by selecting the cheapest edge to an unseen node. This is one step before Dijkstra, where you also consider prior distances in the calculation. This does not give shortest distances, whereas Dijkstra does, but it could have other interesting properties about it. I'll call it "wavesearch" or maybe "Dumbstra." This will be useful in constructing other "wave" algorithms. The idea is interesting because we can begin the wave at multiple disconnected points in a graph. The wave will still tell you which nodes are on its edge, and which are cheapest.
 
 ### example
 
@@ -84,7 +84,7 @@ A dorky implementation of Dijkstra which expands a wavefront of nodes while upda
                                       9
 ```
 
-Dijkstra returns the distances (select cheapest distance),
+Dijkstra returns
 
 ```
 [6, 0, 10, 7, 8, 13, 12, 2, 7, 15, 8]
