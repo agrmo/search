@@ -2,35 +2,53 @@
 
 Search algorithms on various data structures.
 
-## depth-binary-tree
+## depth-undirected
 
-Serial recursive depth first search on a binary tree. Will be useful for Priority Queue implementations.
+Depth first search on an undirected graph.
 
 ### example
 
 ```
-             3
-            / \
-           /   \
-          /     \
-         5       2
-        / \     / \
-       1   9   5   8
+                     5       4
+                      \     /
+                       2   3
+                        \ /
+                    13-7-1-6-12
+                        / \
+                       8   9
+                      /     \
+                     10      11
 ```
 
-Searching for 8 returns
+returns
 
 ```
-[3, 2, 8]
+[1, 9, 11, 8, 10, 6, 12, 3, 4, 2, 5, 7, 13]
 ```
 
 ## breadth-undirected
 
 Breadth first search on an undirected graph.
 
-## depth-undirected
+### example
 
-Depth first search on an undirected graph.
+```
+                     5       4
+                      \     /
+                       2   3
+                        \ /
+                    13-7-1-6-12
+                        / \
+                       8   9
+                      /     \
+                     10      11
+```
+
+returns
+
+```
+[1, 7, 2, 3, 6, 8, 9, 13, 5, 4, 12, 10, 11]
+```
 
 ## wavesearch
 
@@ -55,7 +73,7 @@ A neutered version of Dijkstra which doesn't consider prior distances, but rathe
                                       9
 ```
 
-Wavesearch returns
+returns
 
 ```
 [6, 0, 12, 8, 9, 15, 14, 2, 7, 17, 8]
@@ -84,7 +102,7 @@ A dorky implementation of Dijkstra which expands a wavefront of nodes while upda
                                       9
 ```
 
-Dijkstra returns
+returns
 
 ```
 [6, 0, 10, 7, 8, 13, 12, 2, 7, 15, 8]
