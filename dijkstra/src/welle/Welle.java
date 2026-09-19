@@ -1,12 +1,12 @@
 package welle;
 
-import graph.gewicht.Doppelgewichtgraph;
-import java.util.HashSet;
 import druck.liste.Listedrucker;
+import graph.gewicht.Doppelgewichtgraph;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 // Eine Welle ist eine Menge von Knoten eines Graphen, die in einer
-// unbestimmten Richtung ausgehen.
+// unbestimmten Richtung ausgeht.
 //
 // Was ist der Nutzen? Der Dijkstra Algorithmus erzeugt eine Welle,
 // die von einem Anfangspunkt ausgeht.
@@ -20,6 +20,9 @@ import java.util.ArrayList;
 // Wobei x sind in der gesehenen Menge, und o sind noch night
 // gesehen. D.i. x sind in die Welle, und o sind nicht in die Welle.
 //
+// Aber eine Welle ist mit einem Algorithmus nicht wesentlich
+// verbunden.  Wir können viele Algorithmen beschreiben, die Wellen
+// erzeugen.
 public class Welle {
     
     public Doppelgewichtgraph graph;
@@ -38,7 +41,7 @@ public class Welle {
     // - Doppelgewichtgraph
     // - Die Welle: eine Liste von gesehenen Knoten 
     // aus:
-    // - Liste von Kanten ([von, bis])
+    // - Liste von Kanten [von, bis]
     public ArrayList<int[]> ausgehendeKanten() {
 
 	ArrayList<int[]> aus = new ArrayList<int[]>();
@@ -156,8 +159,8 @@ public class Welle {
 	    int neuerWeg = wege[ak.get(i)[0]]
 		+ this.graph.gewicht.get(ak.get(i)[0]).get(ak.get(i)[1]);
 
-	    // Falls der Weg zum neuen Knoten kleiner ist als der
-	    // vorherigen, nehme den neuen Weg un die neue Kante.
+	    // Falls der Weg zum neuen Knoten kleiner als der
+	    // vorherigen ist, nehme den neuen Weg un die neue Kante.
 	    if (neuerWeg < kleinsterWeg) {
 
 		System.out.println("Index " + i
