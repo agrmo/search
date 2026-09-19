@@ -5,9 +5,7 @@ import graph.gewicht.Doppelgewichtgraph;
 import druck.graph.gewicht.Gewichtgraphdrucker;
 import java.util.Arrays;
 
-/*
-  java -cp classes suche.dijkstra.Main
-*/
+// suche.dijkstra.Main
 
 public class Main {
     

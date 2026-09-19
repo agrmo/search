@@ -1,10 +1,9 @@
 package suche.dijkstra;
 
-import graph.gewicht.Gewichtgraph;
 import graph.gewicht.Doppelgewichtgraph;
+import graph.gewicht.Gewichtgraph;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import welle.Welle;
 
 public class Dijkstra  {
