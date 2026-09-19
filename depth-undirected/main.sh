@@ -1,1 +1,1 @@
-python -m suche.tiefe.main
+ant compile && java -cp classes suche.tiefe.Main
