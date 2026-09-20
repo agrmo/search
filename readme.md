@@ -2,9 +2,9 @@
 
 Search algorithms on various data structures.
 
-## depth-undirected
+## depth-undirected-nodes
 
-Depth first search on an undirected graph.
+Return the nodes obtained from depth first search.
 
 ### example
 
@@ -24,6 +24,41 @@ returns
 
 ```
 [1, 9, 11, 8, 10, 6, 12, 3, 4, 2, 5, 7, 13]
+```
+
+## depth-undirected-edges
+
+Return the edges obtained from depth first search. Useful for building acyclic graphs.
+
+### example
+
+```
+                     5       4
+                      \     /
+                       2   3
+                        \ /
+                    13-7-1-6-12
+                        / \
+                       8   9
+                      /     \
+                     10      11
+```
+
+returns
+
+```
+[1, 7]
+[1, 2]
+[1, 3]
+[1, 6]
+[1, 8]
+[1, 9]
+[9, 11]
+[8, 10]
+[6, 12]
+[3, 4]
+[2, 5]
+[7, 13]
 ```
 
 ## breadth-undirected
