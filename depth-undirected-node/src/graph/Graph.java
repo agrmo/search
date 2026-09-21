@@ -99,43 +99,4 @@ public class Graph {
 	    }
 	}
     }
-
-    // Vergrößere den Graphen zum Knoten n.
-    // Sodaß, zum Beispiel, eine Kante zum
-    // Knoten n ermöglicht einzufügen ist.
-    public void vergroessere(int n) {
-	while (this.groesse <= n) {
-	    this.fuegeknoten();
-	}
-    }
-
-    // Füge einen neuen Knoten ein.
-    public void fuegeknoten() {
-	this.nachbar.add(new ArrayList<Integer>());
-	this.groesse += 1;
-    }
-
-    // Füge eine neue Kante ein.
-    // Die Kanten können neue Knoten verbinden.
-    // Wir werden den Graphen dann zuerst vergrößern.
-    // Die Kante kann auch schon im Graphen stehen.
-    // Wir werden dann keine neue Kante hinfügen.
-    public void fuegekante(int von, int bis) {
-
-	this.vergroessere(von);
-	this.vergroessere(bis);
-	
-	// Die Kante kann auch schon in der Nachbarschaftsliste
-	// stehen.
-
-	// Nur wenn die Kante noch nicht in der
-	// Nachbarschaftsliste steht, fügen wir die Kante ein.
-
-	// Falls die Kante noch nicht im Graphen steht, füge die Kante.
-	if (!this.nachbar.get(von).contains(bis) &&
-	    !this.nachbar.get(bis).contains(von)) {
-		
-	    this.nachbar.get(von).add(bis);
-	}
-    }
 }
