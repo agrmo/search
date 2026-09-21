@@ -1,10 +1,10 @@
-package suche.breite;
+package suche.breite.knoten;
 
 import graph.Graph;
 import graph.Doppelgraph;
 import java.util.Arrays;
 
-// suche.breite.Main
+// suche.breite.knoten.Main
 
 public class Main {
 
@@ -14,26 +14,25 @@ public class Main {
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[] gesehen = Breitensuche.breitensuche(dg, 1);
+	int[] gesehen = Breitensucheknoten.breitensucheknoten(dg, 1);
 	System.out.println(Arrays.toString(gesehen));	
     }
 
     public static void beispielzwei() {
-	/*
-	 * Darstellung:
-	 * 
-	 * 9
-	 * 
-	 * 1 - 7 - 3 - 4
-	 *     \   |
-	 *      \  |
-	 *       \ |
-	 *        0
-	 *
-	 * 6 - 2 - 8
-	 * |       |
-	 * ---------
-	 */
+	//
+	// Darstellung:
+	// 
+	// 9
+	// 
+	// 1 - 7 - 3 - 4
+	//     \   |
+	//      \  |
+	//       \ |
+	//        0
+	//
+	// 6 - 2 - 8
+	// |       |
+	// ---------
 
 	// Es gibt 3 Teile.
 	
@@ -43,39 +42,38 @@ public class Main {
 	Doppelgraph dg = new Doppelgraph(g);
 
 	// Soll 9 geben.
-	int[] gesehenEins = Breitensuche.breitensuche(dg, 9);
+	int[] gesehenEins = Breitensucheknoten.breitensucheknoten(dg, 9);
 	System.out.println(Arrays.toString(gesehenEins));
 
 	// Soll [7, 1, 0, 3, 4] geben.
-	int[] gesehenZwei = Breitensuche.breitensuche(dg, 7);
+	int[] gesehenZwei = Breitensucheknoten.breitensucheknoten(dg, 7);
 	System.out.println(Arrays.toString(gesehenZwei));
 
 	// Soll [1, 7, 3, 0, 4] geben.
-	int[] gesehenDrei = Breitensuche.breitensuche(dg, 1);
+	int[] gesehenDrei = Breitensucheknoten.breitensucheknoten(dg, 1);
 	System.out.println(Arrays.toString(gesehenDrei));
 	
 	// Soll [6,2,8] oder [6,8,2] geben.
-	int[] gesehenVier = Breitensuche.breitensuche(dg, 6);
+	int[] gesehenVier = Breitensucheknoten.breitensucheknoten(dg, 6);
 	System.out.println(Arrays.toString(gesehenVier));
 
 	// Soll [8,2,6] oder [8,6,2] geben.
-	int[] gesehenFuenf = Breitensuche.breitensuche(dg, 8);
+	int[] gesehenFuenf = Breitensucheknoten.breitensucheknoten(dg, 8);
 	System.out.println(Arrays.toString(gesehenFuenf));
     }
 
     public static void beispieldrei() {
-	/*
-	  
-                     5       4
-	              \     /
-                       2   3
-	                \ /
-		    13-7-1-6-12
-	                / \
-		       8   9
-	              /     \
-                     10      11
-	 */
+	//
+	//          5       4
+	//           \     /
+	//            2   3
+	//             \ /
+	//         13-7-1-6-12
+	//             / \
+	//            8   9
+	//           /     \
+	//          10      11
+	//
 
 	int[][] paare = {{1,7},{1,2},{1,3},{1,6},{1,8},{1,9},
 			 {2,5},{3,4},{6,12},{9,11},{8,10},{7,13}};
@@ -84,7 +82,7 @@ public class Main {
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[] gesehenEins = Breitensuche.breitensuche(dg, 1);
+	int[] gesehenEins = Breitensucheknoten.breitensucheknoten(dg, 1);
 	System.out.println(Arrays.toString(gesehenEins));
     }
     
