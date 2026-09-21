@@ -97,6 +97,8 @@ public class Listedrucker {
 	
 	for (int i = 0; i < matrix.length; i++) {
 
+	    sb.append("[");
+
 	    for (int j = 0; j < matrix[i].length; j++) {
 		if (j != 0) {
 		    sb.append(", ");
@@ -105,7 +107,7 @@ public class Listedrucker {
 		sb.append(matrix[i][j]);
 	    }
 	    
-	    sb.append("\n");
+	    sb.append("]\n");
 	}
 
 	return sb.toString();

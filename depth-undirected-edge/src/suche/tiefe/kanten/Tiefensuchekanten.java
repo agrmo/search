@@ -3,6 +3,7 @@ package suche.tiefe.kanten;
 import graph.Graph;
 import graph.Doppelgraph;
 import java.util.ArrayList;
+import java.util.HashSet;
 import liste.Liste;
 
 // Tiefensuche. Gib nur die Reihe von Kanten aus.
@@ -24,20 +25,20 @@ public class Tiefensuchekanten {
     public static int[][] tiefensuchekanten(Doppelgraph dg, int anfangknoten) {
 
 	ArrayList<int[]> kanten = new ArrayList<int[]>();
-	ArrayList<Integer> gesucht = new ArrayList<Integer>();
-	ArrayList<Integer> zusuchen = new ArrayList<Integer>();
-
+	HashSet<Integer> gesehen = new HashSet<Integer>();
+	ArrayList<Integer> zulaufen = new ArrayList<Integer>();
+	
 	// Anfang
-	zusuchen.add(anfangknoten);
+	zulaufen.add(anfangknoten);
 
-	while (zusuchen.size() > 0) {
-	    int naechste = zusuchen.remove(0);
-	    gesucht.add(naechste);
+	while (zulaufen.size() > 0) {
+	    int naechste = zulaufen.remove(zulaufen.size() - 1);
+	    gesehen.add(naechste);
 	    ArrayList<Integer> nachbarn = dg.nachbar.get(naechste);
 	    for (int nachbar : nachbarn) {
-		if (!gesucht.contains(nachbar) && !zusuchen.contains(nachbar)) {
+		if (!gesehen.contains(nachbar) && !zulaufen.contains(nachbar)) {
 		    kanten.add(new int[] {naechste, nachbar});
-		    zusuchen.add(0, nachbar);
+		    zulaufen.add(nachbar);
 		}
 	    }
 	}
