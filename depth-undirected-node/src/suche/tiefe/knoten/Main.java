@@ -1,10 +1,10 @@
-package suche.tiefe;
+package suche.tiefe.knoten;
 
 import graph.Graph;
 import graph.Doppelgraph;
 import java.util.Arrays;
 
-// suche.tiefe.Main
+// suche.tiefe.knoten.Main
 
 public class Main {
 
@@ -14,26 +14,26 @@ public class Main {
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[] gesehen = Tiefensuche.tiefensuche(dg, 1);
+	int[] gesehen = Tiefensucheknoten.tiefensucheknoten(dg, 1);
 	System.out.println(Arrays.toString(gesehen));	
     }
 
     public static void beispielzwei() {
-	/*
-	 * Darstellung:
-	 * 
-	 * 9
-	 * 
-	 * 1 - 7 - 3 - 4
-	 *     \   |
-	 *      \  |
-	 *       \ |
-	 *        0
-	 *
-	 * 6 - 2 - 8
-	 * |       |
-	 * ---------
-	 */
+	//
+	// Darstellung:
+	// 
+	// 9
+	// 
+	// 1 - 7 - 3 - 4
+	//     \   |
+	//      \  |
+	//       \ |
+	//        0
+	//
+	// 6 - 2 - 8
+	// |       |
+	// ---------
+	//
 
 	// Es gibt 3 Teile.
 	
@@ -43,39 +43,38 @@ public class Main {
 	Doppelgraph dg = new Doppelgraph(g);
 
 	// Soll 9 geben.
-	int[] gesehenEins = Tiefensuche.tiefensuche(dg, 9);
+	int[] gesehenEins = Tiefensucheknoten.tiefensucheknoten(dg, 9);
 	System.out.println(Arrays.toString(gesehenEins));
 
 	// Soll [7, 3, 4, 1, 0] geben.
-	int[] gesehenZwei = Tiefensuche.tiefensuche(dg, 7);
+	int[] gesehenZwei = Tiefensucheknoten.tiefensucheknoten(dg, 7);
 	System.out.println(Arrays.toString(gesehenZwei));
 
 	// Soll [1, 7, 3, 0, 4] geben.
-	int[] gesehenDrei = Tiefensuche.tiefensuche(dg, 1);
+	int[] gesehenDrei = Tiefensucheknoten.tiefensucheknoten(dg, 1);
 	System.out.println(Arrays.toString(gesehenDrei));
 
 	// Soll [6,2,8] oder [6,8,2] geben.
-	int[] gesehenVier = Tiefensuche.tiefensuche(dg, 6);
+	int[] gesehenVier = Tiefensucheknoten.tiefensucheknoten(dg, 6);
 	System.out.println(Arrays.toString(gesehenVier));
 
 	// Soll [8,2,6] oder [8,6,2] geben.
-	int[] gesehenFuenf = Tiefensuche.tiefensuche(dg, 8);
+	int[] gesehenFuenf = Tiefensucheknoten.tiefensucheknoten(dg, 8);
 	System.out.println(Arrays.toString(gesehenFuenf));
     }
 
     public static void beispieldrei() {
-	/*
-	  
-                     5       4
-	              \     /
-                       2   3
-	                \ /
-		    13-7-1-6-12
-	                / \
-		       8   9
-	              /     \
-                     10      11
-	 */
+	//
+	//           5       4
+	//            \     /
+	//             2   3
+	//              \ /
+	//          13-7-1-6-12
+	//              / \
+	//             8   9
+	//            /     \
+	//           10      11
+	//
 
 	// Soll etwas sinnvolles geben...
 	int[][] paare = {{1,7},{1,2},{1,3},{1,6},{1,8},{1,9},
@@ -85,7 +84,7 @@ public class Main {
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[] gesehenEins = Tiefensuche.tiefensuche(dg, 1);
+	int[] gesehenEins = Tiefensucheknoten.tiefensucheknoten(dg, 1);
 	System.out.println(Arrays.toString(gesehenEins));
     }
     
