@@ -26,9 +26,9 @@ returns
 [1, 9, 11, 8, 10, 6, 12, 3, 4, 2, 5, 7, 13]
 ```
 
-## depth-undirected-edge
+## depth-undirected-edge-node
 
-Return the edges from depth first search on an undirected graph.
+Return the edges from depth first search on an undirected graph. Note very particularly that there are two kinds of DFS: DFS that groups the edges together from a node ("per-node DFS") and DFS that spelunks the edge strictly before the others from their parent ("per-edge DFS"). This is per-node DFS.
 
 ### example
 

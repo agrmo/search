@@ -1,4 +1,4 @@
-package suche.tiefe.kanten;
+package suche.tiefe.kanten.knoten;
 
 import graph.Graph;
 import graph.Doppelgraph;
