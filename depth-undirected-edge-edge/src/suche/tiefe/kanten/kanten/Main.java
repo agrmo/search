@@ -1,11 +1,11 @@
-package suche.tiefe.kanten.knoten;
+package suche.tiefe.kanten.kanten;
 
 import graph.Graph;
 import graph.Doppelgraph;
 import java.util.Arrays;
 import druck.liste.Listedrucker;
 
-// suche.tiefe.kanten.knoten.Main
+// suche.tiefe.kanten.kanten.Main
 
 public class Main {
 
@@ -15,16 +15,16 @@ public class Main {
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[][] gesehen = Tiefensuchekantenknoten.suche(dg, 1);
-	System.out.println(Listedrucker.drucke(gesehen));
+	int[][] gesehen = Tiefensuchekantenkanten.suche(dg, 1);
+	System.out.println(Listedrucker.drucke(gesehen));	
     }
 
     public static void beispielzwei() {
 	//
 	// Darstellung:
-	//
+	// 
 	// 9
-	//
+	// 
 	// 1 - 7 - 3 - 4
 	//     \   |
 	//      \  |
@@ -37,30 +37,30 @@ public class Main {
 	//
 
 	// Es gibt 3 Teile.
-
+	
 	int[][] paare = {{1,7},{7,3},{3,4},{3,0},{7,0},{6,2},{2,8},{6,8}};
 	int groesse = 10;
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
 	// Soll 9 geben.
-	int[][] gesehenEins = Tiefensuchekantenknoten.suche(dg, 9);
+	int[][] gesehenEins = Tiefensuchekantenkanten.suche(dg, 9);
 	System.out.println(Listedrucker.drucke(gesehenEins));
 
 	// Soll [7, 3, 4, 1, 0] geben.
-	int[][] gesehenZwei = Tiefensuchekantenknoten.suche(dg, 7);
+	int[][] gesehenZwei = Tiefensuchekantenkanten.suche(dg, 7);
 	System.out.println(Listedrucker.drucke(gesehenZwei));
 
 	// Soll [1, 7, 3, 0, 4] geben.
-	int[][] gesehenDrei = Tiefensuchekantenknoten.suche(dg, 1);
+	int[][] gesehenDrei = Tiefensuchekantenkanten.suche(dg, 1);
 	System.out.println(Listedrucker.drucke(gesehenDrei));
 
 	// Soll [6,2,8] oder [6,8,2] geben.
-	int[][] gesehenVier = Tiefensuchekantenknoten.suche(dg, 6);
+	int[][] gesehenVier = Tiefensuchekantenkanten.suche(dg, 6);
 	System.out.println(Listedrucker.drucke(gesehenVier));
 
 	// Soll [8,2,6] oder [8,6,2] geben.
-	int[][] gesehenFuenf = Tiefensuchekantenknoten.suche(dg, 8);
+	int[][] gesehenFuenf = Tiefensuchekantenkanten.suche(dg, 8);
 	System.out.println(Listedrucker.drucke(gesehenFuenf));
     }
 
@@ -78,27 +78,23 @@ public class Main {
 	//
 
 	// Verstehen Sie diesen Punkt ganz klar. Die Reihe von Kanten
-	// sind gesammelt pro Knoten. Also alle Kanten von 1 werden
-	// zuerst ausgegeben. Dann die Kanten 2, dann die Kanten von
-	// 5, zum Beispiel. Also es ist ja Tiefensuche, aber die
-	// Kanten sind gesammelt. Das heißt "Tiefensuche pro Knoten"
-	// und nicht "Tiefensuche pro Kante."
+	// sind gesammelt pro Kante. Also nur eine Kanten von 1 werden
+	// durchgelaufen. Also es ist ja Tiefensuche, und die Kanten
+	// sind nicht gesammelt. Das heißt "Tiefensuche pro Kante" und
+	// nicht "Tiefensuche pro Knoten."
 
 	int[][] paare = {{1,7},{1,2},{1,3},{1,6},{1,8},{1,9},
 			 {2,5},{3,4},{6,12},{9,11},{8,10},{7,13}};
-
+	
 	int groesse = 14;
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[][] gesehenEins = Tiefensuchekantenknoten.suche(dg, 1);
+	int[][] gesehenEins = Tiefensuchekantenkanten.suche(dg, 1);
 	System.out.println(Listedrucker.drucke(gesehenEins));
-	        
-    }
-
-    public static void main(String[] args) {
-	beispieldrei();
-	        
     }
     
+    public static void main(String[] args) {
+	beispieldrei();
+    }
 }

@@ -1,1 +1,1 @@
-ant compile && java -cp classes suche.tiefe.kanten.Main
+ant compile && java -cp classes suche.tiefe.kanten.knoten.Main
