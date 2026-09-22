@@ -1,4 +1,4 @@
-package suche.tiefe.kanten;
+package suche.tiefe.kanten.knoten;
 
 import graph.Graph;
 import graph.Doppelgraph;
@@ -66,16 +66,23 @@ public class Main {
 
     public static void beispieldrei() {
 	//
-        //          5       4
+	//          5       4
 	//           \     /
-        //            2   3
+	//            2   3
 	//             \ /
 	//         13-7-1-6-12
 	//             / \
 	//            8   9
 	//           /     \
-        //          10      11
+	//          10      11
 	//
+
+	// Verstehen Sie diesen Punkt ganz klar. Die Reihe von Kanten
+	// sind gesammelt pro Knoten. Also alle Kanten von 1 werden
+	// zuerst ausgegeben. Dann die Kanten 2, dann die Kanten von
+	// 5, zum Beispiel. Also es ist ja Tiefensuche, aber die
+	// Kanten sind gesammelt. Das heißt "Tiefensuche pro Knoten"
+	// und nicht "Tiefensuche pro Kante."
 
 	int[][] paare = {{1,7},{1,2},{1,3},{1,6},{1,8},{1,9},
 			 {2,5},{3,4},{6,12},{9,11},{8,10},{7,13}};
