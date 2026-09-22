@@ -61,6 +61,45 @@ returns
 [7, 13]
 ```
 
+Compare with per-edge DFS.
+
+## depth-undirected-edge-edge
+
+Per-edge DFS. 
+
+### example
+
+```
+                     5       4
+                      \     /
+                       2   3
+                        \ /
+                    13-7-1-6-12
+                        / \
+                       8   9
+                      /     \
+                     10      11
+```
+
+returns
+
+```
+[1, 9]
+[9, 11]
+[1, 8]
+[8, 10]
+[1, 6]
+[6, 12]
+[1, 3]
+[3, 4]
+[1, 2]
+[2, 5]
+[1, 7]
+[7, 13]
+```
+
+Compare with per-node DFS.
+
 ## breadth-undirected-node
 
 Return the nodes from depth first search on an undirected graph.
