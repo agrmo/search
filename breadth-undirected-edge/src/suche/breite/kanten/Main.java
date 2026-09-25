@@ -14,7 +14,7 @@ public class Main {
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[][] kanten = Breitensuchekanten.breitensuchekanten(dg, 1);
+	int[][] kanten = Breitensuchekanten.suche(dg, 1);
 	System.out.println(Listedrucker.drucke(kanten));	
     }
 
@@ -42,23 +42,23 @@ public class Main {
 	Doppelgraph dg = new Doppelgraph(g);
 
 	// Soll 9 geben.
-	int[][] kantenEins = Breitensuchekanten.breitensuchekanten(dg, 9);
+	int[][] kantenEins = Breitensuchekanten.suche(dg, 9);
 	System.out.println(Listedrucker.drucke(kantenEins));
 
 	// Soll [7, 1, 0, 3, 4] geben.
-	int[][] kantenZwei = Breitensuchekanten.breitensuchekanten(dg, 7);
+	int[][] kantenZwei = Breitensuchekanten.suche(dg, 7);
 	System.out.println(Listedrucker.drucke(kantenZwei));
 
 	// Soll [1, 7, 3, 0, 4] geben.
-	int[][] kantenDrei = Breitensuchekanten.breitensuchekanten(dg, 1);
+	int[][] kantenDrei = Breitensuchekanten.suche(dg, 1);
 	System.out.println(Listedrucker.drucke(kantenDrei));
 	
 	// Soll [6,2,8] oder [6,8,2] geben.
-	int[][] kantenVier = Breitensuchekanten.breitensuchekanten(dg, 6);
+	int[][] kantenVier = Breitensuchekanten.suche(dg, 6);
 	System.out.println(Listedrucker.drucke(kantenVier));
 
 	// Soll [8,2,6] oder [8,6,2] geben.
-	int[][] kantenFuenf = Breitensuchekanten.breitensuchekanten(dg, 8);
+	int[][] kantenFuenf = Breitensuchekanten.suche(dg, 8);
 	System.out.println(Listedrucker.drucke(kantenFuenf));
     }
 
@@ -82,7 +82,7 @@ public class Main {
 	Graph g = new Graph(paare, groesse);
 	Doppelgraph dg = new Doppelgraph(g);
 
-	int[][] kanten = Breitensuchekanten.breitensuchekanten(dg, 1);
+	int[][] kanten = Breitensuchekanten.suche(dg, 1);
 	System.out.println(Listedrucker.drucke(kanten));
     }
     
