@@ -40,32 +40,30 @@ public class Doppelgraph extends Graph {
 	    // Knoten ein. 
 	    for (int j = 0; j < knoten.size(); j++) {
 
-		/*
-		  Diese Kante, j, konnte die ursprüngliche Kante oder
-		  die verdoppelte Kante sein.
-		  
-		  Beispiel:
-		  Anfang:
-		  0: []
-                  1: [2]
-                  2: [0]
-                  
-                  Schritt: [1,2]: Setze ein: Von: 2 bis: 1
-
-		  Schritt: [2,0]: Setze ein: Von: 0 bis: 2
-
-		  Schritt: [2,1]:
-		  Beide Kanten [2,1] und [1,2] stehen schon im Graphen.
-                  Setze nicht ein: Von: 2 bis: 1
-
-		  Ende:
-                  0: [2]
-                  1: [2]
-                  2: [0, 1]
-
-		  Prüfe ob die Kante schon in der Nachbarschaftsliste
-		  steht.
-		 */
+		// Diese Kante, j, konnte die ursprüngliche Kante oder
+		// die verdoppelte Kante sein.
+		// 
+		// Beispiel:
+		// Anfang:
+		// 0: []
+                // 1: [2]
+                // 2: [0]
+                // 
+                // Schritt: [1,2]: Setze ein: Von: 2 bis: 1
+		// 
+		// Schritt: [2,0]: Setze ein: Von: 0 bis: 2
+		// 
+		// Schritt: [2,1]:
+		// Beide Kanten [2,1] und [1,2] stehen schon im Graphen.
+                // Setze nicht ein: Von: 2 bis: 1
+		// 
+		// Ende:
+                // 0: [2]
+                // 1: [2]
+                // 2: [0, 1]
+		// 
+		// Prüfe ob die Kante schon in der Nachbarschaftsliste
+		// steht.
 
 		if (!this.nachbar.get(knoten.get(j)).contains(i)) {
 		    this.nachbar.get(knoten.get(j)).add(i);

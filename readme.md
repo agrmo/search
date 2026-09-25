@@ -2,6 +2,65 @@
 
 Search algorithms on various data structures.
 
+## breadth-undirected-node
+
+Return the nodes from depth first search on an undirected graph.
+
+### example
+
+```
+                     5       4
+                      \     /
+                       2   3
+                        \ /
+                    13-7-1-6-12
+                        / \
+                       8   9
+                      /     \
+                     10      11
+```
+
+returns
+
+```
+[1, 7, 2, 3, 6, 8, 9, 13, 5, 4, 12, 10, 11]
+```
+
+## breadth-undirected-edge
+
+Return the edges from depth first search on an undirected graph.
+
+### example
+
+```
+                     5       4
+                      \     /
+                       2   3
+                        \ /
+                    13-7-1-6-12
+                        / \
+                       8   9
+                      /     \
+                     10      11
+```
+
+returns
+
+```
+[1, 7]
+[1, 2]
+[1, 3]
+[1, 6]
+[1, 8]
+[1, 9]
+[7, 13]
+[2, 5]
+[3, 4]
+[6, 12]
+[8, 10]
+[9, 11]
+```
+
 ## depth-undirected-node
 
 Return the nodes from depth first search on an undirected graph.
@@ -99,65 +158,6 @@ returns
 ```
 
 Compare with per-node DFS.
-
-## breadth-undirected-node
-
-Return the nodes from depth first search on an undirected graph.
-
-### example
-
-```
-                     5       4
-                      \     /
-                       2   3
-                        \ /
-                    13-7-1-6-12
-                        / \
-                       8   9
-                      /     \
-                     10      11
-```
-
-returns
-
-```
-[1, 7, 2, 3, 6, 8, 9, 13, 5, 4, 12, 10, 11]
-```
-
-## breadth-undirected-edge
-
-Return the edges from depth first search on an undirected graph.
-
-### example
-
-```
-                     5       4
-                      \     /
-                       2   3
-                        \ /
-                    13-7-1-6-12
-                        / \
-                       8   9
-                      /     \
-                     10      11
-```
-
-returns
-
-```
-[1, 7]
-[1, 2]
-[1, 3]
-[1, 6]
-[1, 8]
-[1, 9]
-[7, 13]
-[2, 5]
-[3, 4]
-[6, 12]
-[8, 10]
-[9, 11]
-```
 
 ## wavesearch
 

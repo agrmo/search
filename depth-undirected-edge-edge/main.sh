@@ -1,1 +1,2 @@
-ant compile && java -cp classes suche.tiefe.kanten.kanten.Main
+mkdir -p classes
+javac -d classes $(find src -type f) && java -cp classes suche.tiefe.kanten.kanten.Main

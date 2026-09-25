@@ -12,8 +12,8 @@ import liste.Liste;
 public class Breitensuchekanten  {
 
     // Die Graph muss verdoppelt sein.
-    public static int[][] breitensuchekanten(Doppelgraph dg,
-					   int anfangknoten) {
+    public static int[][] suche(Doppelgraph dg,
+				int anfangknoten) {
 
 	HashSet<Integer> gesehen = new HashSet<Integer>();
 	ArrayList<int[]> kanten = new ArrayList<int[]>();
