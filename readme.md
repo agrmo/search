@@ -216,3 +216,38 @@ returns
 ```
 [6, 0, 10, 7, 8, 13, 12, 2, 7, 15, 8]
 ```
+
+## dijkstra-heap
+
+A proper implementation of Dijkstra using a min-heap.
+
+### example
+
+```
+            2   5      1
+          1 - 7 - 3 ------4
+              \   |        \
+              4\  |2        \3
+                \ | 1     3  \   3
+                 0-----8------2------5
+                  \   /        \
+                  9\ /1         \2
+                    10           \
+                                  6
+                                   \
+                                    \3
+                                     \
+                                      9
+```
+
+returns the distances
+
+```
+[6, 0, 10, 7, 8, 13, 12, 2, 7, 15, 8]
+```
+
+and the paths for every node
+
+```
+[7, 1, 8, 7, 3, 2, 2, 1, 0, 6, 0]
+```
