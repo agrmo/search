@@ -188,7 +188,7 @@ returns
 [6, 0, 12, 8, 9, 15, 14, 2, 7, 17, 8]
 ```
 
-## dijkstra
+## dijkstra-wave
 
 A dorky implementation of Dijkstra which expands a wavefront of nodes while updating the distances. Not efficient, but intuitive.
 
