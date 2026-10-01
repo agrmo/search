@@ -1,11 +1,11 @@
-package suche.dijkstra.haufen;
+package suche.dijkstra;
+
+// suche.dijkstra.haufen.Main
 
 import graph.gewicht.Gewichtgraph;
 import graph.gewicht.Doppelgewichtgraph;
 import java.util.Arrays;
 import liste.Zweiliste;
-
-// suche.dijkstra.haufen.Main
 
 public class Main {
     static void beispieleins() {

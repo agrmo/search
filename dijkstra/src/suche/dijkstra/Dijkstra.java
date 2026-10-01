@@ -1,4 +1,4 @@
-package suche.dijkstra.haufen;
+package suche.dijkstra;
 
 import ganz.vektor.GZweivektor;
 import graph.gewicht.Doppelgewichtgraph;
