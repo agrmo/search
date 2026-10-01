@@ -62,8 +62,8 @@ public class Welle {
 		
 		if (!this.gesehen.contains(nachbar)) {
 
-		    // Füge den Index des beiden Knotens.
-		    // Knoten ist ein Index, i ist auch ein Index.
+		    // Der Nachbar steht nicht in der Welle.
+		    // Füge eine neue Kante ein.
 		    aus.add(new int[] {knoten, i});
 		}
 	    }
@@ -133,7 +133,6 @@ public class Welle {
 	return ak.get(index);
     }
 
-    // Dijkstra
     public int[] nehmeKleinstenWeg(int[] wege) {
 	// Nehme eine Liste der ausgehenden Kanten.
 	ArrayList<int[]> ak = this.ausgehendeKanten();

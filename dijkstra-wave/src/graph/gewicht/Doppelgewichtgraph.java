@@ -48,7 +48,7 @@ public class Doppelgewichtgraph {
 	this.nachbar.add(new ArrayList<Integer>());
 	this.gewicht.add(new ArrayList<Integer>());
 
-	int index = this.nachbar.size() - 1;
+	int index = this.groesse() - 1;
 	return index;
     }
 
@@ -59,19 +59,19 @@ public class Doppelgewichtgraph {
     void neueKante(int von, int bis, int gewicht) {
 	
 	if (von >= this.nachbar.size()) {
-	    System.out.println("von " + von + " ist zu groß.");
+	    System.out.println("Problem: von " + von + " ist zu groß.");
 	}
 	
 	if (bis >= this.nachbar.size()) {
-	    System.out.println("bis " + bis + " ist zu groß.");
+	    System.out.println("Problem: bis " + bis + " ist zu groß.");
 	}
 	
 	if (this.nachbar.get(von).contains(bis)) {
-	    System.out.println("[" + von + "," + bis + "] schon existiert.");
+	    System.out.println("Problem: [" + von + "," + bis + "] schon existiert.");
 	}
 	
 	if (this.nachbar.get(bis).contains(von)) {
-	    System.out.println("[" + bis + "," + von + "] schon existiert.");
+	    System.out.println("Problem: [" + bis + "," + von + "] schon existiert.");
 	}
 	
 	// Füge die Kante.

@@ -4,7 +4,7 @@ Search algorithms on various data structures.
 
 ## breadth-undirected-node
 
-Return the nodes from depth first search on an undirected graph.
+Return the nodes from breadth first search on an undirected graph.
 
 ### example
 
@@ -28,7 +28,7 @@ returns
 
 ## breadth-undirected-edge
 
-Return the edges from depth first search on an undirected graph.
+Return the edges from breadth first search on an undirected graph.
 
 ### example
 
@@ -87,7 +87,7 @@ returns
 
 ## depth-undirected-edge-node
 
-Return the edges from depth first search on an undirected graph. Note very particularly that there are two kinds of DFS: DFS that groups the edges together from a node ("per-node DFS") and DFS that spelunks the edge strictly before the others from their parent ("per-edge DFS"). This is per-node DFS.
+Per-node DFS.
 
 ### example
 
@@ -124,7 +124,7 @@ Compare with per-edge DFS.
 
 ## depth-undirected-edge-edge
 
-Per-edge DFS. 
+Per-edge DFS.
 
 ### example
 
@@ -161,7 +161,7 @@ Compare with per-node DFS.
 
 ## wavesearch
 
-A neutered version of Dijkstra which doesn't consider prior distances, but rather expands a wavefront of nodes by selecting the cheapest edge to an unseen node. This is one step before Dijkstra, where you also consider prior distances in the calculation. This does not give shortest distances, whereas Dijkstra does, but it could have other interesting properties about it. I'll call it "wavesearch" or maybe "Dumbstra." This will be useful in constructing other "wave" algorithms. The idea is interesting because we can begin the wave at multiple disconnected points in a graph. The wave will still tell you which nodes are on its edge, and which are cheapest.
+A neutered version of Dijkstra which doesn't consider prior distances, but rather expands a wavefront of nodes by selecting the cheapest edge to an unseen node. This is one step before Dijkstra, which considers prior distances as well. This does not give shortest distances, whereas Dijkstra does, but it could have other interesting properties about it. I'll call it "wavesearch" or maybe "Dumbstra." This will be useful in constructing other "wave" algorithms. The idea is interesting because we can begin the wave at multiple disconnected points in a graph. The wave will still tell you which nodes are on its edge, and which are cheapest.
 
 ### example
 
@@ -222,6 +222,8 @@ returns
 A proper implementation of Dijkstra using a min-heap.
 
 ### example
+
+Starting at 1,
 
 ```
             2   5      1
