@@ -1,11 +1,11 @@
 package suche.tiefe.kanten.kanten;
 
+// suche.tiefe.kanten.kanten.Main
+
 import graph.Graph;
 import graph.Doppelgraph;
 import java.util.Arrays;
 import druck.liste.Listedrucker;
-
-// suche.tiefe.kanten.kanten.Main
 
 public class Main {
 

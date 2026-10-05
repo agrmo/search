@@ -29,7 +29,7 @@ public class Listedrucker {
 	    sb.append(liste.get(i));
 	}
 
-	sb.append("]\n");
+	sb.append("]");
 
 	return sb.toString();
     }

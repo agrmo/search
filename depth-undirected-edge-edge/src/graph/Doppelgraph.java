@@ -23,15 +23,12 @@ import java.util.ArrayList;
 public class Doppelgraph extends Graph {
 
     public Doppelgraph(Graph ein) {
-	this.groesse = ein.groesse;
-
-	// Achtung: Wir addieren einen Zeiger! Wir nehmen an, daß der
-	// ursprüngliche Graph ein nicht mehr bearbeitet wird.
+	
+	// Achtung: Wenn der ursprüngliche Graph bearbeitet wird, wird
+	// dieser Graph auch verändert.
 	this.nachbar = ein.nachbar;
 
-	// Die eigehende Nachbarschaftsliste ist genau gleich wie der
-	// eingehende Graph. D.i. die Speicherdaten sind gleich. Nun
-	// verdoppele jede Kante.
+	// Nun verdoppele jede Kante des Graphen.
 	
 	for (int i = 0; i < this.nachbar.size(); i++) {
 	    ArrayList<Integer> knoten = this.nachbar.get(i);
@@ -46,21 +43,24 @@ public class Doppelgraph extends Graph {
 		// Beispiel:
 		// Anfang:
 		// 0: []
-                // 1: [2]
-                // 2: [0]
-                // 
-                // Schritt: [1,2]: Setze ein: Von: 2 bis: 1
+		// 1: [2]
+		// 2: [0]
+		// 
+		// Schritt: [1,2]: Setze ein: Von: 2 bis: 1
 		// 
 		// Schritt: [2,0]: Setze ein: Von: 0 bis: 2
 		// 
 		// Schritt: [2,1]:
 		// Beide Kanten [2,1] und [1,2] stehen schon im Graphen.
-                // Setze nicht ein: Von: 2 bis: 1
+		// Setze nicht ein: Von: 2 bis: 1
+		//
+		// Darum müssen wir jedes Mal die Kante prüfen, sodaß
+		// wir sie nicht dreimal hinfügen.
 		// 
 		// Ende:
-                // 0: [2]
-                // 1: [2]
-                // 2: [0, 1]
+		// 0: [2]
+		// 1: [2]
+		// 2: [0, 1]
 		// 
 		// Prüfe ob die Kante schon in der Nachbarschaftsliste
 		// steht.

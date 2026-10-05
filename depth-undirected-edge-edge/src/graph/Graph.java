@@ -37,11 +37,6 @@ public class Graph {
     //  d.h., der Index der Liste zeigt den Namen des Knoten.
     public ArrayList<ArrayList<Integer>> nachbar;
 
-    // Die Anzahl der Knoten dieses Graphen.
-    // Die Anzahl der Knoten in diesem Graph. Wir müssen den Groesse
-    // bestimmt einnehmen, weil es Knoten ohne Kanten geben konnte.
-    public int groesse;
-
     // Die Liste von Paaren, die die Knoten einer Kante zeigen. Die
     // Knoten sind genau die Kennzeichen der Listen.
     // z.B. [[1,2],[0,1],[2,0]] ist eine Schleife.
@@ -58,12 +53,10 @@ public class Graph {
     // 
     // Baue einen neuen Graph mit keinem Knoten und keiner Kante.
     public Graph() {
-	this.groesse = 0;
 	this.nachbar = new ArrayList<ArrayList<Integer>>();
     }
     
     public Graph(int[][] paare, int groesse) {
-	this.groesse = groesse;
 	
 	// Am Anfang gibt es keine Kante.  Erzeugen die
 	// Nachbarschaftsliste mit Größe "groesse" und erzeugen eine
@@ -94,9 +87,14 @@ public class Graph {
 		this.nachbar.get(paar[0]).add(paar[1]);
 		
 	    } else {
-		System.out.println("Die Kante " + paar[0] + ", " + paar[1]
-				   + " schon existiert.");
+		System.out.println("Problem: Die Kante" + paar[0] + ", "
+				   + paar[1] + " existiert schon.");
 	    }
 	}
+    }
+
+    // Die Anzahl der Knoten dieses Graphen.
+    public int groesse() {
+	return this.nachbar.size();
     }
 }

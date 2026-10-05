@@ -1,12 +1,12 @@
 package suche.tiefe.kanten.kanten;
 
-import graph.Graph;
 import graph.Doppelgraph;
+import graph.Graph;
 import java.util.ArrayList;
 import java.util.HashSet;
 import liste.Liste;
 
-// Tiefensuche. Gib nur die Reihe von Kanten aus.
+// Tiefensuche pro Kanten. Gib nur die Reihe von Kanten aus.
 
 public class Tiefensuchekantenkanten {
 
@@ -37,8 +37,11 @@ public class Tiefensuchekantenkanten {
 	while (zulaufen.size() > 0) {
 
 	    int[] naechste = zulaufen.remove(zulaufen.size() - 1);
-	    kanten.add(naechste);
-	    gesehen.add(naechste[0]);
+
+	    if (!gesehen.contains(naechste[0])) {
+		kanten.add(naechste);
+		gesehen.add(naechste[0]);		
+	    }
 	    
 	    ArrayList<Integer> nachbarn = dg.nachbar.get(naechste[1]);
 	    for (int nachbar : nachbarn) {

@@ -136,4 +136,17 @@ public class Liste {
 
 	return -1;
     }
+
+    // Nehme die Umkehrung der Liste.
+    public static int[] umkehrung(ArrayList<Integer> liste) {
+
+	int n = liste.size();
+	int[] umkehrungliste = new int[n];
+	    
+	for (int i = 0; i < n; i++) {
+	    umkehrungliste[i] = liste.get(n - 1 - i);
+	}
+
+	return umkehrungliste;
+    }
 }
