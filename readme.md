@@ -253,3 +253,7 @@ and the paths for every node
 ```
 [7, 1, 8, 7, 3, 2, 2, 1, 0, 6, 0]
 ```
+
+## heap
+
+Search through a multi-valued heap, such that the particular paired value is found with the node's value.
