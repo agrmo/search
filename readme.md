@@ -256,4 +256,21 @@ and the paths for every node
 
 ## heap
 
-Search through a multi-valued heap, such that the particular paired value is found with the node's value.
+Search through a multi-valued heap, such that the particular paired value is found with the node's value. E.g. the heap 
+
+```
+     16
+    /  \
+   17   21
+  /
+ 19
+```
+
+has the mapping
+
+```
+16: 4, 4
+17: 3, 3
+21: 1, 1
+19: 2, 2
+```

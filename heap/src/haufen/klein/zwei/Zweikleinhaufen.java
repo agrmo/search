@@ -17,7 +17,7 @@ public class Zweikleinhaufen {
 	this.zwei = new ArrayList<Integer>();
     }
 
-    void tausche(int i, int j) {
+    public void tausche(int i, int j) {
 	int izahl = liste.get(i);
 	liste.set(i, liste.get(j));
 	liste.set(j, izahl);
@@ -32,7 +32,7 @@ public class Zweikleinhaufen {
     }
 
     // Verhaufe die Zahl nach oben (wenn sie zu klein ist).
-    void verhaufenoben(int index) {
+    public void verhaufenoben(int index) {
 
 	int zahl = liste.get(index);
 	int elter = Haufen.elter(index);
@@ -45,7 +45,7 @@ public class Zweikleinhaufen {
     }
 
     // Verhaufe die Zahl nach unten (wenn sie groß ist).
-    void verhaufenunten(int index) {
+    public void verhaufenunten(int index) {
 
 	int n = liste.size();
 
