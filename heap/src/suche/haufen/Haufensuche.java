@@ -2,6 +2,7 @@ package suche.haufen;
 
 import haufen.klein.zwei.Zweikleinhaufen;
 import haufen.Haufen;
+import haufen.klein.Kleinhaufen;
 
 // Suche durch einem Kleinhaufen.
 //
@@ -11,6 +12,46 @@ import haufen.Haufen;
 // verbunden bei jedem Knoten zwei Zahlen. Die Funktion findeeins
 // findet den Knoten mit der gegebenen Zahl als die erste Zahl.
 public class Haufensuche {
+
+    // Finde den Knoten mit dem gegebenen Wert im gegebenen Kleinhaufen.
+    // Gib den Index in der Haufenliste aus.
+    public static int findewert(Kleinhaufen haufen, int wert) {
+
+	// Anfang
+	int index = 0;
+
+	System.out.println("groesse " + haufen.liste.size());
+	System.out.println("suche " + wert);
+
+	while (haufen.liste.get(index) != wert) {
+
+	    System.out.println("index " + index + " wert " + haufen.liste.get(index));
+
+	    // Suche für den Wert.
+	    //
+	    //        o
+	    //       / \
+	    //      o   o
+	    //
+
+	    if (wert > haufen.liste.get(Haufen.linksindex(index))) {
+
+		// Links ist kleiner.
+		System.out.println("links");
+		index = Haufen.linksindex(index);
+		
+	    } else {
+
+		// Rechts ist größer.
+		System.out.println("links");
+		index = Haufen.rechtsindex(index);
+	    }
+	}
+
+	// Gefunden?
+	System.out.println("Gefunden? index " + index + " wert " + haufen.liste.get(index));
+	return index;
+    }
     
     // Finde den Knoten mit dem gegebenen Wert mit der Zahl in der
     // ersten Stelle.
@@ -28,16 +69,25 @@ public class Haufensuche {
 
 	while (haufen.eins.get(index) != zahl) {
 
-	    System.out.println("index " + index + " zahl " + haufen.eins.get(index) + " wert " + haufen.liste.get(index));
+	    System.out.println("index " + index + " eins " + haufen.eins.get(index) + " wert " + haufen.liste.get(index));
+
+	    // Suche für den Knoten.
+	    //
+	    //        o
+	    //       / \
+	    //      o   o
+	    //
 
 	    if (wert < haufen.liste.get(index)) {
 
 		// Links ist kleiner.
+		System.out.println("links");
 		index = Haufen.linksindex(index);
 		
 	    } else {
 
 		// Rechts ist größer.
+		System.out.println("links");
 		index = Haufen.rechtsindex(index);
 	    }
 	}

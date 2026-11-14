@@ -123,7 +123,6 @@ public class Zweikleinhaufen {
     // Füge die Zahl in dem Haufen.
     // Die Größe der Liste wird eine Stelle kleiner.
     public void fuege(int zahl, int e, int z) {
-
 	int index = this.liste.size();
 	this.liste.add(zahl);
 	this.eins.add(e);
