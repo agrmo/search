@@ -75,12 +75,6 @@ public class Gewichtgraph {
 	if (bis >= this.nachbar.size()) {
 	    System.out.println("bis " + bis + " ist zu groß.");
 	}
-
-	// We unfortunately need to run two O(n) checks to see if the
-	// node is already a neighbor. We could revise the entire data
-	// structure to make this a dictionary but I'm not really
-	// interested. If the user was perfect, we would not need to
-	// throw these two exceptions.
 	
 	if (this.nachbar.get(von).contains(bis)) {
 	    System.out.println("[" + von + "," + bis + "] schon existiert.");
@@ -90,11 +84,11 @@ public class Gewichtgraph {
 	    System.out.println("[" + bis + "," + von + "] schon existiert.");
 	}
 
-	// Add the edge.
+	// Füge die Kante.
 
 	this.nachbar.get(von).add(bis);
 
-	// Add the weight.
+	// Füge das Gewicht.
 
 	this.gewicht.get(von).add(gewicht);
     }

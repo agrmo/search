@@ -1,7 +1,5 @@
 package suche.dijkstra;
 
-// suche.dijkstra.haufen.Main
-
 import graph.gewicht.Gewichtgraph;
 import graph.gewicht.Doppelgewichtgraph;
 import java.util.Arrays;
